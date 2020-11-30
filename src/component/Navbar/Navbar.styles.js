@@ -32,7 +32,6 @@ export const NavLogo = styled(LinkR)`
   display: flex;
   justify-self: center;
   cursor: pointer;
-  display: flex;
   align-items: center;
   /* margin-left: 24px; */
   text-decoration: none;
