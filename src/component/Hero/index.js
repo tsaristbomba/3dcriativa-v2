@@ -38,13 +38,7 @@ const Hero = ({ heroTitle, heroSub, btnLabel }) => {
   return (
     <HeroContainer>
       <HeroBg>
-        <VideoBg
-          // autoPlay
-          loop
-          muted
-          src={video1}
-          type="video/mp4"
-        />
+        <VideoBg autoPlay loop muted src={video1} type="video/mp4" />
       </HeroBg>
       <HeroContent data-aos="fade-up">
         <HeroH1>{heroTitle}</HeroH1>
