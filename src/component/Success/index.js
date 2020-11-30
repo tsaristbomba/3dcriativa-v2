@@ -13,7 +13,7 @@ import {
   Logo2,
 } from "./Success.styles";
 
-const index = () => {
+const Success = () => {
   useEffect(() => {
     Aos.init();
   }, []);
@@ -36,4 +36,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Success;
