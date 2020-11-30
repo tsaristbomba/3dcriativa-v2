@@ -33,7 +33,7 @@ const Contact = () => {
           <ContactH3>Contato</ContactH3>
         </ContactTitle>
         <ContactFormWrap data-aos="fade-up">
-          <ContactForm name="contact" id="form" method="POST" action="/success">
+          <ContactForm name="contact" id="form" method="POST" action="/sucesso">
             <input type="hidden" name="form-name" value="contact" />
             <ContactInputSmall
               required
