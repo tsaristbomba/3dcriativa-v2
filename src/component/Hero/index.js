@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import PropTypes from "prop-types";
-// import video from "../../videos/video.mp4";
-// import video2 from "../../videos/video-2.mp4";
 import video1 from "../../videos/video-1.mp4";
 import {
   HeroContainer,
