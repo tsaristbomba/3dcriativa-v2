@@ -53,6 +53,8 @@ export const FooterSocials = styled.div`
 export const SocialLink = styled.a`
   color: ${tertiary};
   font-size: 24px;
+  display: flex;
+  align-items: center;
 `;
 export const InstagramIcon = styled(RiInstagramFill)`
   font-size: 22px;
