@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -16,6 +17,8 @@ import {
 } from "./Contact.styles";
 
 const Contact = () => {
+  const [redirect, setRedirect] = useState(false);
+
   // Scroll to top every render
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,14 +29,29 @@ const Contact = () => {
     Aos.init();
   }, []);
 
+  //Avoid default 'thank you' page from netlify and redirect to our own
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    setRedirect(true);
+  }
+  //
+
   return (
     <ContactContainer>
+      {redirect ? <Redirect to="/contato/sucesso" /> : ""}
       <ContactWrapper>
         <ContactTitle>
           <ContactH3>Contato</ContactH3>
         </ContactTitle>
         <ContactFormWrap data-aos="fade-up">
-          <ContactForm name="contact" id="form" method="POST" action="/sucesso">
+          <ContactForm
+            name="contact"
+            id="form"
+            method="POST"
+            action="/contato/sucesso"
+            onSubmit={(e) => handleSubmit(e)}
+          >
             <input type="hidden" name="form-name" value="contact" />
             <ContactInputSmall
               required
