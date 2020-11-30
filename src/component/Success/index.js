@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import {
   SuccessContainer,
   MsgWrapper,
@@ -12,6 +14,10 @@ import {
 } from "./Success.styles";
 
 const index = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
     <SuccessContainer>
       <MiniNav>
@@ -20,7 +26,7 @@ const index = () => {
           <Logo2>CRIATIVA</Logo2>
         </NavLogo>
       </MiniNav>
-      <SuccessWrapper>
+      <SuccessWrapper data-aos="fade-up">
         <MsgWrapper>
           <SuccessIcon /> Mensagem enviada, valeu!
         </MsgWrapper>

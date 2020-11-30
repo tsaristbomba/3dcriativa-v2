@@ -49,7 +49,7 @@ const Contact = () => {
             name="contact"
             id="form"
             method="POST"
-            action="/contato/sucesso"
+            action="/"
             onSubmit={(e) => handleSubmit(e)}
           >
             <input type="hidden" name="form-name" value="contact" />
