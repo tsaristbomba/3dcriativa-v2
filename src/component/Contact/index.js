@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import React, {
+  // useState,
+  useEffect,
+} from "react";
+// import { Redirect } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -17,7 +20,7 @@ import {
 } from "./Contact.styles";
 
 const Contact = () => {
-  const [redirect, setRedirect] = useState(false);
+  // const [redirect, setRedirect] = useState(false);
 
   // Scroll to top every render
   useEffect(() => {
@@ -30,16 +33,16 @@ const Contact = () => {
   }, []);
 
   //Avoid default 'thank you' page from netlify and redirect to our own
-  function handleSubmit(e) {
-    e.preventDefault();
+  // function handleSubmit(e) {
+  //   e.preventDefault();
 
-    setRedirect(true);
-  }
+  //   setRedirect(true);
+  // }
   //
 
   return (
     <ContactContainer>
-      {redirect ? <Redirect to="/contato/sucesso" /> : ""}
+      {/* {redirect ? <Redirect to="/contato/sucesso" /> : ""} */}
       <ContactWrapper>
         <ContactTitle>
           <ContactH3>Contato</ContactH3>
@@ -50,7 +53,7 @@ const Contact = () => {
             id="form"
             method="POST"
             action="/"
-            onSubmit={(e) => handleSubmit(e)}
+            // onSubmit={(e) => handleSubmit(e)}
           >
             <input type="hidden" name="form-name" value="contact" />
             <ContactInputSmall
