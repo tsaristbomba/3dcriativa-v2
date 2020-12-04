@@ -24,6 +24,7 @@ const Footer = ({ toggleHome }) => {
             href="https://www.instagram.com/3d.criativa/"
             target="_blank"
             aria-label="Instagram"
+            rel="noopener noreferrer"
           >
             <InstagramIcon />
           </SocialLink>
@@ -40,7 +41,11 @@ const Footer = ({ toggleHome }) => {
         </FooterLogo>
         <FooterMaker>
           dev by{" "}
-          <MakerLink href="https://telfer.io" target="_blank">
+          <MakerLink
+            href="https://telfer.io"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             telfer
           </MakerLink>
         </FooterMaker>
