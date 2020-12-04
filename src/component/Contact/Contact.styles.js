@@ -3,28 +3,28 @@ import { primary, secondary, tertiary } from "../../data";
 
 export const ContactContainer = styled.div`
   background: ${secondary};
-  height: 100vh;
+  height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 24px;
-  margin-bottom: -80px;
 
   @media screen and (max-width: 768px) {
-    height: 100%;
-    margin-bottom: 0;
+    height: calc(100vh - 150px);
+    align-items: center;
   }
 `;
 export const ContactWrapper = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
   padding: 24px;
-  max-width: 1100px;
+  max-width: 800px;
   width: 100%;
-  margin-top: 80px;
 
   @media screen and (max-width: 768px) {
     padding: 0;
+    margin-top: 80px;
   }
 `;
 export const ContactTitle = styled.div`
@@ -37,7 +37,7 @@ export const ContactH3 = styled.h3`
   border-bottom: 3px solid ${primary};
 `;
 export const ContactFormWrap = styled.div`
-  margin: 24px;
+  margin: 24px 0;
   display: flex;
   justify-content: center;
 
