@@ -1,7 +1,7 @@
-import { createGlobalStyle } from "styled-components";
-import styled from "styled-components";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 import { primary, secondary, tertiary } from "./data/index";
+import { ImSpinner2 } from "react-icons/im";
 
 export const GlobalStyles = createGlobalStyle`
     * {
@@ -26,8 +26,8 @@ export const GlobalStyles = createGlobalStyle`
   
   /* Style your items */
     .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
-      background: grey;
-      margin-bottom: 30px;
+      background: transparent;
+      /* margin-bottom: 30px; */
   }
   //
 `;
@@ -54,4 +54,20 @@ export const Button = styled(LinkR)`
     transition: all 0.2s ease-in-out;
     background: ${tertiary};
   }
+`;
+
+const spin = keyframes`
+    100% {
+        transform: rotate(360deg);
+    }
+    
+`;
+
+export const Spinner = styled(ImSpinner2)`
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  color: ${tertiary};
+  font-size: 2rem;
+  animation: ${spin} 2s linear infinite;
 `;

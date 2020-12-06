@@ -20,9 +20,8 @@ import {
   PortfolioTitle,
   PortfolioH3,
   PortfolioColumns,
-  ImgSmall,
-  ImgLarge,
 } from "./Portfolio.styles";
+import ImageComponent from "./ImageComponent";
 
 const Portfolio = () => {
   // Scroll to top every render
@@ -56,15 +55,15 @@ const Portfolio = () => {
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
-            <ImgSmall src={portfolioOne} alt="Portfolio" />
-            <ImgLarge src={portfolioSix} alt="Portfolio" />
-            <ImgSmall src={portfolioThree} alt="Portfolio" />
-            <ImgSmall src={portfolioFive} alt="Portfolio" />
-            <ImgSmall src={portfolioSeven} alt="Portfolio" />
-            <ImgLarge src={portfolioTwo} alt="Portfolio" />
-            <ImgLarge src={portfolioFour} alt="Portfolio" />
-            <ImgSmall src={portfolioEight} alt="Portfolio" />
-            <ImgSmall src={portfolioNine} alt="Portfolio" />
+            <ImageComponent imgSrc={portfolioOne} imgAlt="Portfolio" />
+            <ImageComponent large imgSrc={portfolioSix} imgAlt="Portfolio" />
+            <ImageComponent imgSrc={portfolioThree} imgAlt="Portfolio" />
+            <ImageComponent imgSrc={portfolioFive} imgAlt="Portfolio" />
+            <ImageComponent imgSrc={portfolioSeven} imgAlt="Portfolio" />
+            <ImageComponent large imgSrc={portfolioTwo} imgAlt="Portfolio" />
+            <ImageComponent large imgSrc={portfolioFour} imgAlt="Portfolio" />
+            <ImageComponent imgSrc={portfolioEight} imgAlt="Portfolio" />
+            <ImageComponent imgSrc={portfolioNine} imgAlt="Portfolio" />
           </Masonry>
         </PortfolioColumns>
       </PortfolioWrapper>
