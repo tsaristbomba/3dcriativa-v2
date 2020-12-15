@@ -3,6 +3,7 @@ import { primary, secondary } from "../../data";
 
 export const PortfolioContainer = styled.div`
   background: ${secondary};
+  min-height: 100vh;
   height: 100%;
   margin-top: 80px;
   display: flex;

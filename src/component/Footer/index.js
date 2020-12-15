@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import {
   FooterContainer,
   FooterWrapper,
@@ -15,7 +14,7 @@ import {
   MakerLink,
 } from "./Footer.styles";
 
-const Footer = ({ toggleHome }) => {
+const Footer = () => {
   return (
     <FooterContainer>
       <FooterWrapper>
@@ -32,7 +31,7 @@ const Footer = ({ toggleHome }) => {
             <EmailIcon />
           </SocialLink>
         </FooterSocials>
-        <FooterLogo to="/" onClick={toggleHome}>
+        <FooterLogo smooth to="/#top">
           <Logo1>
             3D<Logo2>CRIATIVA</Logo2>
           </Logo1>
@@ -54,10 +53,6 @@ const Footer = ({ toggleHome }) => {
       </FooterWrapper>
     </FooterContainer>
   );
-};
-
-Footer.propTypes = {
-  toggleHome: PropTypes.func,
 };
 
 export default Footer;

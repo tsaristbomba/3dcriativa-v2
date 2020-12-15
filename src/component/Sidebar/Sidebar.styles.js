@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
 import { NavHashLink as LinkR } from "react-router-hash-link";
-import { Link as LinkS } from "react-scroll";
 import { primary, secondary, tertiary } from "../../data";
 
 export const SidebarContainer = styled.aside`
@@ -38,22 +37,6 @@ export const SidebarMenu = styled.div`
 
   @media screen and(max-width: 480px) {
     grid-template-rows: repeat(3, 60px);
-  }
-`;
-export const SidebarLinkScroll = styled(LinkS)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  text-decoration: none;
-  list-style: none;
-  transition: 0.2s ease-in-out;
-  color: ${tertiary};
-  letter-spacing: 1.1px;
-
-  &:hover {
-    color: ${primary};
-    transition: 0.2s ease-in-out;
   }
 `;
 export const SidebarLinkRouter = styled(LinkR)`

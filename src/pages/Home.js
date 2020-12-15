@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { animateScroll as scroll } from "react-scroll";
 import {
   heroObj,
   homeContactObject,
@@ -41,19 +40,9 @@ const Home = () => {
   }, []);
   //
 
-  // Scroll to the top onclick
-  const toggleHome = () => {
-    scroll.scrollToTop();
-  };
-  //
-
   return (
     <>
-      <Navbar
-        handleMenu={handleMenu}
-        toggleHome={toggleHome}
-        scrolled={scrolled}
-      />
+      <Navbar handleMenu={handleMenu} scrolled={scrolled} />
       <Sidebar isOpen={isOpen} handleMenu={handleMenu} />
       <Hero {...heroObj} />
       <div id="sobre">
@@ -62,7 +51,7 @@ const Home = () => {
         <Info {...infoObjThree} />
         <Info {...homeContactObject} />
       </div>
-      <Footer toggleHome={toggleHome} />
+      <Footer />
     </>
   );
 };

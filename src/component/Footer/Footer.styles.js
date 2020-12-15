@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link as LinkR } from "react-router-dom";
+import { NavHashLink as LinkR } from "react-router-hash-link";
 import { FiInstagram, FiMail } from "react-icons/fi";
 import { secondary, primary, tertiary } from "../../data";
 

@@ -13,7 +13,7 @@ import {
   NavLinkRouter,
 } from "./Navbar.styles";
 
-const Navbar = ({ scrolled, toggleHome, handleMenu }) => {
+const Navbar = ({ scrolled, handleMenu }) => {
   // scroll offset function
   const scrollOffset = (e) => {
     const yCordinate = e.getBoundingClientRect().top + window.pageYOffset;
@@ -25,7 +25,7 @@ const Navbar = ({ scrolled, toggleHome, handleMenu }) => {
   return (
     <Nav scrolled={scrolled}>
       <NavbarContainer>
-        <NavLogo smooth onClick={toggleHome} to="/#">
+        <NavLogo smooth to="/#">
           <Logo1>3D</Logo1>
           <Logo2 scrolled={scrolled}>CRIATIVA</Logo2>
         </NavLogo>
