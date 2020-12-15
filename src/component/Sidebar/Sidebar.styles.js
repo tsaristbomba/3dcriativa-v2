@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
-import { Link as LinkR } from "react-router-dom";
+import { NavHashLink as LinkR } from "react-router-hash-link";
 import { Link as LinkS } from "react-scroll";
 import { primary, secondary, tertiary } from "../../data";
 

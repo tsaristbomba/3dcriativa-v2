@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { animateScroll as scroll } from "react-scroll";
-import { heroObj, infoObjOne, infoObjThree, infoObjTwo } from "../data";
+import {
+  heroObj,
+  homeContactObject,
+  infoObjOne,
+  infoObjThree,
+  infoObjTwo,
+} from "../data";
 import Navbar from "../component/Navbar";
 import Hero from "../component/Hero";
 import Sidebar from "../component/Sidebar";
@@ -47,14 +53,14 @@ const Home = () => {
         handleMenu={handleMenu}
         toggleHome={toggleHome}
         scrolled={scrolled}
-        about={true}
       />
-      <Sidebar isOpen={isOpen} handleMenu={handleMenu} about={true} />
+      <Sidebar isOpen={isOpen} handleMenu={handleMenu} />
       <Hero {...heroObj} />
       <div id="sobre">
         <Info {...infoObjOne} />
         <Info {...infoObjTwo} />
         <Info {...infoObjThree} />
+        <Info {...homeContactObject} />
       </div>
       <Footer toggleHome={toggleHome} />
     </>

@@ -16,10 +16,13 @@ import {
   Column2,
   ImgWrap,
   Img,
+  ContactIcons,
+  IconLink,
+  InstaIcon,
+  EmailIcon,
 } from "./Info.styles";
 
 const Info = ({
-  id,
   imgStart,
   topLine,
   headline,
@@ -28,12 +31,16 @@ const Info = ({
   btnLabel,
   imgSrc,
   imgAlt,
+  iconOn,
+  isHome,
+  darkBg,
 }) => {
   useEffect(() => {
     Aos.init();
   }, []);
+
   return (
-    <InfoContainer data-aos="fade-up">
+    <InfoContainer data-aos="fade-up" $isHome={isHome} $darkBg={darkBg}>
       <InfoWrapper>
         <InfoRow $imgStart={imgStart}>
           <Column1>
@@ -44,6 +51,22 @@ const Info = ({
               <BtnWrap $btnOn={btnOn}>
                 <Button to="/trabalhos">{btnLabel}</Button>
               </BtnWrap>
+              <ContactIcons $iconOn={iconOn}>
+                <IconLink
+                  href="mailto:criativa3d@outlook.com"
+                  aria-label="Email"
+                >
+                  <EmailIcon />
+                </IconLink>
+                <IconLink
+                  href="https://www.instagram.com/3d.criativa/"
+                  target="_blank"
+                  aria-label="Instagram"
+                  rel="noopener noreferrer"
+                >
+                  <InstaIcon />
+                </IconLink>
+              </ContactIcons>
             </TextWrapper>
           </Column1>
           <Column2>
@@ -64,6 +87,8 @@ Info.propTypes = {
   headline: PropTypes.string,
   description: PropTypes.string,
   btnOn: PropTypes.bool,
+  iconOn: PropTypes.bool,
+  isHome: PropTypes.bool,
   btnLabel: PropTypes.string,
   imgSrc: PropTypes.string,
   imgAlt: PropTypes.string,

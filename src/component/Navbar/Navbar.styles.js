@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { NavLink as LinkR } from "react-router-dom";
-import { Link as LinkS } from "react-scroll";
+import { NavHashLink as LinkR } from "react-router-hash-link";
 import { primary, secondary, tertiary } from "../../data";
 
 export const Nav = styled.nav`
@@ -91,26 +90,5 @@ export const NavLinkRouter = styled(LinkR)`
 
   &:hover {
     color: ${primary};
-  }
-`;
-export const NavLinkScroll = styled(LinkS)`
-  color: ${({ $scrolled }) => ($scrolled ? tertiary : secondary)};
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
-  cursor: pointer;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  letter-spacing: 1.1px;
-
-  &.active {
-    border-bottom: 3px solid ${primary};
-  }
-
-  &:hover {
-    color: ${primary};
-    transition: all 0.2s ease-in-out;
   }
 `;

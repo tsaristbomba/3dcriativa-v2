@@ -33,8 +33,10 @@ const Footer = ({ toggleHome }) => {
           </SocialLink>
         </FooterSocials>
         <FooterLogo to="/" onClick={toggleHome}>
-          <Logo1>3D</Logo1>
-          <Logo2>CRIATIVA</Logo2>
+          <Logo1>
+            3D<Logo2>CRIATIVA</Logo2>
+          </Logo1>
+
           <FooterRights>
             ⓒ {new Date().getFullYear()} todos os direitos reservados.
           </FooterRights>

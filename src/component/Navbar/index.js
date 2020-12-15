@@ -11,14 +11,21 @@ import {
   NavMenu,
   NavItem,
   NavLinkRouter,
-  NavLinkScroll,
 } from "./Navbar.styles";
 
-const Navbar = ({ scrolled, toggleHome, handleMenu, about }) => {
+const Navbar = ({ scrolled, toggleHome, handleMenu }) => {
+  // scroll offset function
+  const scrollOffset = (e) => {
+    const yCordinate = e.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -80;
+    window.scrollTo({ top: yCordinate + yOffset, behavior: "smooth" });
+  };
+  //
+
   return (
     <Nav scrolled={scrolled}>
       <NavbarContainer>
-        <NavLogo onClick={toggleHome} to="/">
+        <NavLogo smooth onClick={toggleHome} to="/#">
           <Logo1>3D</Logo1>
           <Logo2 scrolled={scrolled}>CRIATIVA</Logo2>
         </NavLogo>
@@ -26,30 +33,23 @@ const Navbar = ({ scrolled, toggleHome, handleMenu, about }) => {
           <FaBars />
         </MobileIcon>
         <NavMenu>
-          {about ? (
-            <NavItem>
-              <NavLinkScroll
-                to="sobre"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-                $scrolled={scrolled}
-              >
-                Sobre
-              </NavLinkScroll>
-            </NavItem>
-          ) : (
-            <></>
-          )}
           <NavItem>
-            <NavLinkRouter to="/trabalhos" $scrolled={scrolled}>
+            <NavLinkRouter
+              smooth
+              to="/#sobre"
+              scroll={scrollOffset}
+              $scrolled={scrolled}
+            >
+              Sobre
+            </NavLinkRouter>
+          </NavItem>
+          <NavItem>
+            <NavLinkRouter to="/trabalhos#top" $scrolled={scrolled}>
               Trabalhos
             </NavLinkRouter>
           </NavItem>
           <NavItem>
-            <NavLinkRouter to="/contato" $scrolled={scrolled}>
+            <NavLinkRouter to="/contato#top" $scrolled={scrolled}>
               Contato
             </NavLinkRouter>
           </NavItem>
@@ -63,7 +63,6 @@ Navbar.propTypes = {
   scrolled: PropTypes.bool,
   toggleHome: PropTypes.func,
   handleMenu: PropTypes.func,
-  about: PropTypes.bool,
 };
 
 export default Navbar;

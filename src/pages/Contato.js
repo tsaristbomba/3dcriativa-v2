@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Contact from "../component/Contact";
+import ContactSlim from "../component/ContactSlim";
+// import Contact from "../component/Contact";
 import Footer from "../component/Footer";
 import Navbar from "../component/Navbar";
 import Sidebar from "../component/Sidebar";
@@ -17,7 +18,8 @@ const Contato = () => {
     <>
       <Navbar scrolled={true} handleMenu={handleMenu} />
       <Sidebar isOpen={isOpen} handleMenu={handleMenu} />
-      <Contact />
+      {/* <Contact /> */}
+      <ContactSlim />
       <Footer />
     </>
   );

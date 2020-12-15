@@ -5,39 +5,36 @@ import {
   Icon,
   CloseIcon,
   SidebarMenu,
-  SidebarLinkScroll,
   SidebarLinkRouter,
 } from "./Sidebar.styles";
 
-const Sidebar = ({ handleMenu, isOpen, about }) => {
+const Sidebar = ({ handleMenu, isOpen }) => {
+  // scroll offset function
+  const scrollOffset = (e) => {
+    const yCordinate = e.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -80;
+    window.scrollTo({ top: yCordinate + yOffset, behavior: "smooth" });
+  };
+  //
+
   return (
     <SidebarContainer isOpen={isOpen}>
       <Icon onClick={handleMenu}>
         <CloseIcon />
       </Icon>
       <SidebarMenu>
-        {
-          // if about is true(only true on homepage) then show link
-          about ? (
-            <SidebarLinkScroll
-              to="sobre"
-              smooth={true}
-              duration={500}
-              spy={true}
-              exact="true"
-              offset={-80}
-              onClick={handleMenu}
-            >
-              Sobre
-            </SidebarLinkScroll>
-          ) : (
-            <></>
-          )
-        }
-        <SidebarLinkRouter onClick={handleMenu} to="/trabalhos">
+        <SidebarLinkRouter
+          to="/#sobre"
+          smooth
+          onClick={handleMenu}
+          scroll={scrollOffset}
+        >
+          Sobre
+        </SidebarLinkRouter>
+        <SidebarLinkRouter onClick={handleMenu} to="/trabalhos#top">
           Trabalhos
         </SidebarLinkRouter>
-        <SidebarLinkRouter onClick={handleMenu} to="/contato">
+        <SidebarLinkRouter onClick={handleMenu} to="/contato#top">
           Contato
         </SidebarLinkRouter>
       </SidebarMenu>

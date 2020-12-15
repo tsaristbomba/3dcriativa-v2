@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { primary, secondary, tertiary } from "../../data";
+import { FiInstagram, FiMail } from "react-icons/fi";
 
 export const InfoContainer = styled.div`
   color: ${tertiary};
-  background: ${secondary};
+  background: ${({ $darkBg }) => ($darkBg ? "#dddddd" : secondary)};
 
   @media screen and (max-width: 768px) {
-    margin: 100px 0;
+    padding: ${({ $isHome }) => ($isHome ? "80px 0" : "2rem 0")};
   }
 `;
 export const InfoWrapper = styled.div`
@@ -91,4 +92,23 @@ export const Img = styled.img`
   width: 100%;
   margin: 0 0 10px 0;
   padding-right: 0;
+`;
+export const ContactIcons = styled.div`
+  display: ${({ $iconOn }) => ($iconOn ? "flex" : "none")};
+  justify-content: space-between;
+  align-items: center;
+  max-width: 120px;
+  margin-top: 1rem;
+`;
+export const IconLink = styled.a`
+  font-size: 3rem;
+  color: ${tertiary};
+
+  &:hover {
+    color: ${primary};
+  }
+`;
+export const EmailIcon = styled(FiMail)``;
+export const InstaIcon = styled(FiInstagram)`
+  font-size: 2.6rem;
 `;
